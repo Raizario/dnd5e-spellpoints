@@ -20,13 +20,13 @@
       }
     ]
   },
-  "url": "https://github.com/misthero/dnd5e-spellpoints",
-  "manifest": "https://raw.githubusercontent.com/misthero/dnd5e-spellpoints/main/module.json",
-  "download": "https://github.com/misthero/dnd5e-spellpoints/archive/refs/heads/main.zip",
+  "url": "https://github.com/Raizario/raizario-dnd5e-spellpoints",
+  "manifest": "https://raw.githubusercontent.com/Raizario/raizario-dnd5e-spellpoints/main/module.json",
+  "download": "https://github.com/Raizario/raizario-dnd5e-spellpoints/archive/refs/heads/main.zip",
   "authors": [
     {
-      "name": "misthero",
-      "url": "https://github.com/misthero",
+      "name": "Raizario",
+      "url": "https://github.com/Raizario",
       "flags": {}
     }
   ],

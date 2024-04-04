@@ -743,3 +743,19 @@ Hooks.on('renderSpellPointsForm', (spellPointsForm, html, data) => {
   const isCustom = (data.isCustom || "").toString().toLowerCase() == "true"
   spellPointsForm.setCustomOnlyVisibility(isCustom)
 })
+
+const PixiNormalizePointer = `PIXI.extensions._queue["renderer-canvas-system"].["${PIXI.extensions._queue["renderer-canvas-system"].findIndex((b) => b.name === "events")}"].ref.prototype.normalizeToPointerData`;
+libWrapper.register(MODULE_ID, PixiNormalizePointer, (wrapped, event) => {
+	if (event instanceof TouchEvent) {
+		const normalizedEvents = wrapped(event);
+		const newNormalizedEvents = [];
+		for (const normalizedEvent of normalizedEvents) {
+			normalizedEvent.touches = event.touches;
+			normalizedEvent.targetTouches = event.targetTouches;
+			normalizedEvent.changedTouches = event.changedTouches;
+			newNormalizedEvents.push(normalizedEvent);
+		}
+		return newNormalizedEvents;
+	}
+	return wrapped(event);
+});
